@@ -3,6 +3,14 @@
 A [Pallet](http://palletops.com) crate to install and configure
 [Leiningen](https://github.com/technomancy/leiningen).
 
+[Release Notes](ReleaseNotes.md) &#xb7; 
+[API docs](http://palletops.com/java-crate/api/0.8/) &#xb7;
+[Annotated code](http://palletops.com/java-crate/annotated/0.8/uberdoc.html).
+
+```
+[com.palletops/lein-crate "0.8.0-alpha.1"]
+```
+
 ## Usage
 
 To add leiningen to a `server-spec` or a `group-spec`:
