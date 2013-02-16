@@ -1,7 +1,9 @@
 (ns pallet.crate.lein-test
   (:require
    [clojure.test :refer :all]
+   [pallet.action :refer [with-action-options]]
    [pallet.actions :refer [exec-checked-script remote-file]]
+   [pallet.api :refer [plan-fn server-spec]]
    [pallet.build-actions :refer [build-actions]]
    [pallet.crate.lein :refer :all]
    [pallet.test-utils]))
@@ -31,3 +33,10 @@
 
 (deftest leiningen-test
   (is (leiningen {})))
+
+(def live-test-spec
+  (server-spec
+   :extends [(leiningen {})]
+   :phases {:test (plan-fn
+                    (with-action-options {:script-prefix :no-sudo}
+                      (lein "version")))}))
