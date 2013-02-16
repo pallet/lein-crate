@@ -6,6 +6,7 @@
    [pallet.api :refer [plan-fn server-spec]]
    [pallet.build-actions :refer [build-actions]]
    [pallet.crate.lein :refer :all]
+   [pallet.crate.java :refer [java]]
    [pallet.test-utils]))
 
 (deftest install-lein-test
@@ -36,7 +37,7 @@
 
 (def live-test-spec
   (server-spec
-   :extends [(leiningen {})]
+   :extends [(leiningen {}) (java {})]
    :phases {:test (plan-fn
                     (with-action-options {:script-prefix :no-sudo}
                       (lein "version")))}))

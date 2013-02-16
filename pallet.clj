@@ -1,12 +1,11 @@
 ;;; Pallet project configuration file
 
-(require '[pallet.crate.lein-test :refer [live-test-spec]])
+(require
+ '[pallet.crate.lein-test :refer [live-test-spec]]
+ '[pallet.crates.test-nodes :refer [node-specs]])
 
 (defproject lein-crate
-  :provider {:vmfest
-             {:node-spec
-              {:image {:os-family :ubuntu :os-version-matches "12.04"
-                       :os-64-bit true}}
-              :selectors #{:default}}}
-
-  :groups [(group-spec "lein-live-test" :extends [live-test-spec])])
+  :provider node-specs                  ; supported pallet nodes
+  :groups [(group-spec "lein-live-test"
+                       :extends [with-automated-admin-user
+                                 live-test-spec])])
