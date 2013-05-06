@@ -5,7 +5,7 @@
 /doc
 /logs
 /doc-src/INTRO.md
-/doc-src/VERSION.md
+/doc-src/VERSIONS.md
 pom.xml
 pom.xml.asc
 *.jar
