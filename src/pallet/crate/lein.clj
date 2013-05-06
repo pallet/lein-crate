@@ -52,7 +52,7 @@
   (let [options (or (first (filter map? args)) {})
         args (remove map? args)
         settings (get-settings :lein options)]
-    (debugf "lein %s" (string/join " " (seq args)))
+    (debugf "%s" (string/join " " (seq args)))
     (exec-checked-script
      (str "lein " (string/join " " (map name args)))
      (~(install-path settings)
