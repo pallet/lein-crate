@@ -21,23 +21,3 @@ repository. Defaults to `stable`.
 
 
 The crate provides a `lein` function, to execute lein with arguments.
-
-## Tests
-
-To run the live tests on VirtualBox:
-
-```
-lein live-test-up
-```
-
-To run tests against all supported targets:
-
-```
-lein live-test-up --selectors all
-```
-
-To remove test nodes:
-
-```
-lein live-test-down --selectors all
-```

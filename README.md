@@ -1,11 +1,10 @@
-[Repository](https://github.com/pallet/lein-crate) &#xb7; 
-[Issues](https://github.com/pallet/lein-crate/issues) &#xb7; 
-[API docs](http://palletops.com/lein-crate/0.8/api) &#xb7; 
-[Annotated source](http://palletops.com/lein-crate/0.8/annotated/uberdoc.html) &#xb7; 
+[Repository](https://github.com/pallet/lein-crate) &#xb7;
+[Issues](https://github.com/pallet/lein-crate/issues) &#xb7;
+[API docs](http://palletops.com/lein-crate/0.8/api) &#xb7;
+[Annotated source](http://palletops.com/lein-crate/0.8/annotated/uberdoc.html) &#xb7;
 [Release Notes](https://github.com/pallet/lein-crate/blob/develop/ReleaseNotes.md)
 
-A [pallet](http://palletops.com/) crate to install and configure
-[leiningen](https://github.com/technomancy/leiningen).
+A [pallet](http://palletops.com/) crate to install and configure [leiningen](https://github.com/technomancy/leiningen).
 
 ### Dependency Information
 
@@ -59,21 +58,26 @@ The crate provides a `lein` function, to execute lein with arguments.
 
 To run the live tests on VirtualBox:
 
-```
+```bash
 lein live-test-up
 ```
 
 To run tests against all supported targets:
 
-```
+```bash
 lein live-test-up --selectors all
 ```
 
 To remove test nodes:
 
-```
+```bash
 lein live-test-down --selectors all
 ```
+
+## Support
+
+[On the group](http://groups.google.com/group/pallet-clj), or
+[#pallet](http://webchat.freenode.net/?channels=#pallet) on freenode irc.
 
 ## License
 

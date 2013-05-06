@@ -13,4 +13,4 @@
   :resource {:resource-paths ["doc-src"]
              :target-path "target/classes/pallet_crate/lein_crate/"
              :includes [#"doc-src/USAGE.*"]}
-  :prep-tasks ["javac" "compile" "resource" "crate-doc"])
+  :prep-tasks ["resource" "crate-doc"])

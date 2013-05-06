@@ -1,7 +1,6 @@
-{:header "Leiningen"
+{:header "leiningen"
  :title
- "A [pallet](http://palletops.com/) crate to install and configure
-[leiningen](https://github.com/technomancy/leiningen)."
+ "A [pallet](http://palletops.com/) crate to install and configure [leiningen](https://github.com/technomancy/leiningen)."
  :git-repo "https://github.com/pallet/lein-crate"
  :api-docs "http://palletops.com/lein-crate/0.8/api"
  :annotated-docs "http://palletops.com/lein-crate/0.8/annotated/uberdoc.html"
