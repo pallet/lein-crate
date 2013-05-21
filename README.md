@@ -9,7 +9,7 @@ A [pallet](http://palletops.com/) crate to install and configure [leiningen](htt
 ### Dependency Information
 
 ```clj
-:dependencies [[com.palletops/lein "0.8.0-alpha.1"]]
+:dependencies [[com.palletops/lein-crate "0.8.0-alpha.1"]]
 ```
 
 ### Releases
