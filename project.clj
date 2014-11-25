@@ -1,4 +1,4 @@
-(defproject com.palletops/lein-crate "0.8.0-SNAPSHOT"
+(defproject com.palletops/lein-crate "0.8.0-alpha.2"
   :description "Pallet crate to install, configure and use leiningen"
   :url "http://palletops.com"
   :license {:name "Eclipse Public License"
