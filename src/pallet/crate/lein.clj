@@ -3,11 +3,11 @@
   (:require
    [clojure.string :as string]
    [clojure.tools.logging :refer [debugf]])
-  (:use
-   [pallet.action :only [with-action-options]]
-   [pallet.actions :only [exec-checked-script remote-file]]
-   [pallet.api :only [plan-fn server-spec]]
-   [pallet.crate :only [defplan get-settings assoc-settings]]))
+  (:require
+   [pallet.action :refer [with-action-options]]
+   [pallet.actions :refer [exec-checked-script remote-file]]
+   [pallet.api :as api :refer [plan-fn]]
+   [pallet.crate :refer [defplan get-settings assoc-settings]]))
 
 (def ^{:dynamic true} *default-settings*
   {:dir "/usr/local/bin/"
@@ -17,7 +17,7 @@
 (def ^{:dynamic true} *lein-url*
   "https://raw.github.com/technomancy/leiningen/%s/bin/lein")
 
-(defplan lein-settings
+(defplan settings
   "Set options for lein install.
 
    `version` is the version of lein to install. Can be any branch or tagname in
@@ -32,9 +32,9 @@
   [settings]
   (str (:dir settings) (:exec-name settings)))
 
-(defplan install-lein
+(defplan install
   "Install lein script."
-  [& {:keys [instance-id]}]
+  [{:keys [instance-id]}]
   (let [settings (get-settings :lein {:instance-id instance-id})]
     (remote-file
      (install-path settings)
@@ -52,14 +52,16 @@
   (let [options (or (first (filter map? args)) {})
         args (remove map? args)
         settings (get-settings :lein options)]
-    (debugf "lein %s" (string/join " " (seq args)))
+    (debugf "%s" (string/join " " (seq args)))
     (exec-checked-script
      (str "lein " (string/join " " (map name args)))
      (~(install-path settings)
       ~(string/join " " (map name (remove map? args)))))))
 
-(defn leiningen
-  [settings]
-  (server-spec
-   :phases {:settings (plan-fn (lein-settings settings))
-            :configure (plan-fn (install-lein))}))
+(defn server-spec
+  [settings & {:keys [instance-id] :as options}]
+  (api/server-spec
+   :phases {:settings (plan-fn
+                          (pallet.crate.lein/settings (merge settings options)))
+            :install (plan-fn (install options))}
+   :default-phases [:install]))

@@ -1,15 +1,34 @@
-# lein-crate
+[Repository](https://github.com/pallet/lein-crate) &#xb7;
+[Issues](https://github.com/pallet/lein-crate/issues) &#xb7;
+[API docs](http://palletops.com/lein-crate/0.8/api) &#xb7;
+[Annotated source](http://palletops.com/lein-crate/0.8/annotated/uberdoc.html) &#xb7;
+[Release Notes](https://github.com/pallet/lein-crate/blob/develop/ReleaseNotes.md)
 
-A [Pallet](http://palletops.com) crate to install and configure
-[Leiningen](https://github.com/technomancy/leiningen).
+A [pallet](http://palletops.com/) crate to install and configure [leiningen](https://github.com/technomancy/leiningen).
 
-[Release Notes](ReleaseNotes.md) &#xb7; 
-[API docs](http://palletops.com/java-crate/api/0.8/) &#xb7;
-[Annotated code](http://palletops.com/java-crate/annotated/0.8/uberdoc.html).
+### Dependency Information
 
+```clj
+:dependencies [[com.palletops/lein-crate "0.8.0-alpha.1"]]
 ```
-[com.palletops/lein-crate "0.8.0-alpha.1"]
-```
+
+### Releases
+
+<table>
+<thead>
+  <tr><th>Pallet</th><th>Crate Version</th><th>Repo</th><th>GroupId</th></tr>
+</thead>
+<tbody>
+  <tr>
+    <th>0.8.0-beta.1</th>
+    <td>0.8.0-alpha.1</td>
+    <td>clojars</td>
+    <td>com.palletops</td>
+    <td><a href='https://github.com/pallet/lein-crate/blob/0.8.0-alpha.1/ReleaseNotes.md'>Release Notes</a></td>
+    <td><a href='https://github.com/pallet/lein-crate/blob/0.8.0-alpha.1/'>Source</a></td>
+  </tr>
+</tbody>
+</table>
 
 ## Usage
 
@@ -35,6 +54,30 @@ repository. Defaults to `stable`.
 
 The crate provides a `lein` function, to execute lein with arguments.
 
+## Tests
+
+To run the live tests on VirtualBox:
+
+```bash
+lein live-test-up
+```
+
+To run tests against all supported targets:
+
+```bash
+lein live-test-up --selectors all
+```
+
+To remove test nodes:
+
+```bash
+lein live-test-down --selectors all
+```
+
+## Support
+
+[On the group](http://groups.google.com/group/pallet-clj), or
+[#pallet](http://webchat.freenode.net/?channels=#pallet) on freenode irc.
 
 ## License
 
