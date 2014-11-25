@@ -1,8 +1,9 @@
-{:dev {:dependencies
-       [[com.palletops/pallet "0.8.0-beta.1" :classifier "tests"]
+{:provided {:dependencies [[org.clojure/clojure "1.4.0"]
+                           [com.palletops/pallet "0.8.0-RC.11"]]}
+ :dev {:dependencies
+       [[com.palletops/pallet "0.8.0-RC.11" :classifier "tests"]
         [ch.qos.logback/logback-classic "1.0.9"]
-        [com.palletops/crates "0.8.0-SNAPSHOT"]
-        [com.palletops/java-crate "0.8.0-SNAPSHOT"]]
+        [com.palletops/java-crate "0.8.0-beta.6"]]
        :plugins [[lein-set-version "0.3.0"]
                  [com.palletops/lein-pallet-crate "0.1.0"]
                  [lein-resource "0.3.2"]
