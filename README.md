@@ -9,7 +9,7 @@ A [pallet](http://palletops.com/) crate to install and configure [leiningen](htt
 ### Dependency Information
 
 ```clj
-:dependencies [[com.palletops/lein-crate "0.8.0-alpha.1"]]
+:dependencies [[com.palletops/lein-crate ":point"]]
 ```
 
 ### Releases
@@ -21,11 +21,11 @@ A [pallet](http://palletops.com/) crate to install and configure [leiningen](htt
 <tbody>
   <tr>
     <th>0.8.0-beta.1</th>
-    <td>0.8.0-alpha.1</td>
+    <td>:point</td>
     <td>clojars</td>
     <td>com.palletops</td>
-    <td><a href='https://github.com/pallet/lein-crate/blob/0.8.0-alpha.1/ReleaseNotes.md'>Release Notes</a></td>
-    <td><a href='https://github.com/pallet/lein-crate/blob/0.8.0-alpha.1/'>Source</a></td>
+    <td><a href='https://github.com/pallet/lein-crate/blob/:point/ReleaseNotes.md'>Release Notes</a></td>
+    <td><a href='https://github.com/pallet/lein-crate/blob/:point/'>Source</a></td>
   </tr>
 </tbody>
 </table>
