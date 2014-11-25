@@ -5,7 +5,8 @@
         [com.palletops/java-crate "0.8.0-SNAPSHOT"]]
        :plugins [[lein-set-version "0.3.0"]
                  [com.palletops/lein-pallet-crate "0.1.0"]
-                 [lein-resource "0.3.2"]]
+                 [lein-resource "0.3.2"]
+                 [lein-pallet-release "RELEASE"]]
        :aliases {"live-test-up"
                  ["pallet" "up" "--phases" "settings,configure,test"]
                  "live-test-down" ["pallet" "down"]
